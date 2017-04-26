@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用Json和JS制作可动态添加和搜索的表格</title>
+</head>
+<body>
+<script>
+    function createTable() {
+        var table = document.getElementById("table");
+        if(table.hasChildNodes()) return;
+
+        var tr=document.createElement("tr");
+        var td=document.createElement("td");
+        td.innerHTML="title";
+        tr.appendChild(td);
+        var td=document.createElement("td");
+        td.innerHTML="author";
+        tr.appendChild(td);
+        var td=document.createElement("td");
+        td.innerHTML="publisher";
+        tr.appendChild(td);
+        var td=document.createElement("td");
+        td.innerHTML="category";
+        tr.appendChild(td);
+        table.appendChild(tr);
+
+        for(var i=0;i<=4;i++){
+            //创建tr
+            var tr=document.createElement("tr");
+            var td= tr.insertCell();
+            td.innerHTML=myObj.books[i].title;
+            var td= tr.insertCell();
+            td.innerHTML=myObj.books[i].author;
+            var td= tr.insertCell();
+            td.innerHTML=myObj.books[i].publisher;
+            var td= tr.insertCell();
+            td.innerHTML=myObj.books[i].category;
+            table.appendChild(tr);
+        }
+
+    }
+
+    function search() {
+        var key=document.getElementById("key").value.split(" ");
+        var table = document.getElementById("table");
+        for(var j=1;j<=5;j++){
+            for(var k=0;k<4;k++){
+                for(var i=0;i<key.length;i++) {
+                    if (table.children[j].children[k].innerHTML.search(key[i]) >= 0) {
+                        for (var l = 0; l < 4; l++) {
+                            table.children[j].children[l].style.backgroundColor = "red";
+                        }
+                    }
+                }
+            }
+        }
+    }
+    function showRow() {
+        if(!document.getElementById("table").hasChildNodes()) return;
+        document.getElementById("add").style.visibility= "visible";
+    }
+    function addRow() {
+        var table = document.getElementById("table");
+        var tr=document.createElement("tr");
+        var td= tr.insertCell();
+        td.innerHTML=document.getElementById("title").value;
+        var td= tr.insertCell();
+        td.innerHTML=document.getElementById("author").value;
+        var td= tr.insertCell();
+        td.innerHTML=document.getElementById("publisher").value;
+        var td= tr.insertCell();
+        td.innerHTML=document.getElementById("category").value;
+        table.appendChild(tr);
+    }
+    var myObj={
+        "books":[ { "title": "Advanced Mathematics", "author": "Crazy Person", "publisher": "Universal Publisher", "category": "Science" }, { "title": "Data Structure & Algorithms", "author": "John Snow", "publisher": "Universal Publisher",
+            "category": "Science" }, { "title": "Star Wars", "author": "Steve Bervely", "publisher": "Fantastic Publisher", "category": "Fiction" }, { "title": "World History", "author": "Peter Stearns", "publisher": "Serious Publisher", "category": "History" } ]
+    }
+</script>
+<div>
+    可以多关键字查询<br>
+    <button onclick="createTable()">Create Table From JSON</button>
+    Search
+    <input id="key">
+    <button onclick="search()">Search</button>
+</div>
+<table id="table" border="1"></table>
+<button onclick="showRow()">add a row</button>
+<div id="add" style="visibility: hidden">
+    Please fill the following form to create a new row<br>
+    Title<input id="title" value="one">
+    Author<input id="author" value="two">
+    Publisher<input id="publisher" value="three">
+    Category<input id="category" value="four">
+    <button onclick="addRow()">ADD</button>
+</div>
+</body>
+</html>
