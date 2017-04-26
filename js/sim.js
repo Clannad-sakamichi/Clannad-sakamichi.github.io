@@ -58,7 +58,7 @@ $(document).ready(function() {
             }
             else {
                 //up外
-                $("#result").html(function(origText){
+                $("#result").html(function(i,origText){
                     return origText + "非保底up外<br\>";
                 });
                 //out.append("\n非保底up外\n");
@@ -68,7 +68,7 @@ $(document).ready(function() {
             //出三星
             count++;
             $("#result").html(function(i,origText){
-                return origText + "三星<br\>";
+                return origText + "三星 ";
             });
             //out.append("三星 ");
         }
@@ -76,7 +76,7 @@ $(document).ready(function() {
             //出二星
             count++;
             $("#result").html(function(i,origText){
-                return origText + "二星<br\>";
+                return origText + "二星 ";
             });
             //out.append("二星 ");
         }
