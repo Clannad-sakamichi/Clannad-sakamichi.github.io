@@ -10,6 +10,9 @@ $(document).ready(function() {
         var rand;
         var t = 0.205;
         var y = 0.096;
+        $("#count").html(function(i,origText){
+            return parseInt(origText)+1;
+        });
         if (count == 9) {
             count = 0;
             rand = Math.random();
