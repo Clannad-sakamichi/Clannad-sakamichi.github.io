@@ -15,18 +15,24 @@ $(document).ready(function() {
             rand = Math.random();
             if (rand < t) {
                 //up内武器
-                $('#result').text("保底up内武器");
+                $("#result").html(function(i,origText){
+                    return origText + "保底up内武器<br\>";
+                });
                 //out.append("\n保底up内武器\n");
                 //rt.getWeapon(true,4);
             }
             else if (rand < (t + 3 * y)) {
                 //up内圣痕
-                $('#result').text("保底up内圣痕");
+                $("#result").html(function(i,origText){
+                    return origText + "保底up内圣痕<br\>";
+                });
                 //out.append("\n保底up内圣痕\n");
             }
             else {
                 //up外
-                $('#result').text("保底up外");
+                $("#result").html(function(i,origText){
+                    return origText + "保底up外<br\>";
+                });
                 //out.append("\n保底up外\n");
             }
             return;
@@ -38,30 +44,40 @@ $(document).ready(function() {
             rand = Math.random();
             if (rand < t) {
                 //up内武器
-                $('#result').text("非保底up内武器");
+                $("#result").html(function(i,origText){
+                    return origText + "非保底up内武器<br\>";
+                });
                 //out.append("\n非保底up内武器\n");
             }
             else if (rand < (t + 3 * y)) {
                 //up内圣痕
-                $('#result').text("非保底up内圣痕");
+                $("#result").html(function(i,origText){
+                    return origText + "非保底up内圣痕<br\>";
+                });
                 //out.append("\n非保底up内圣痕\n");
             }
             else {
                 //up外
-                $('#result').text("非保底up外");
+                $("#result").html(function(origText){
+                    return origText + "非保底up外<br\>";
+                });
                 //out.append("\n非保底up外\n");
             }
         }
         else if (rand <= ( blue + purple)) {
             //出三星
             count++;
-            $('#result').text("三星");
+            $("#result").html(function(i,origText){
+                return origText + "三星<br\>";
+            });
             //out.append("三星 ");
         }
         else {
             //出二星
             count++;
-            $('#result').text("二星");
+            $("#result").html(function(i,origText){
+                return origText + "二星<br\>";
+            });
             //out.append("二星 ");
         }
     });
