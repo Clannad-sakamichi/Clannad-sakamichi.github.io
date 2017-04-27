@@ -24,7 +24,7 @@ $(document).ready(function() {
             total=parseInt(origText)+1;
             return parseInt(origText)+1;
         });
-        if(total%10==0){
+        if(total%10==0&&total!=1){
             for(var i=1;i<11;i++){
                 $("#"+i).attr("srcset","").html();
             }
