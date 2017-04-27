@@ -57,7 +57,6 @@ $(document).ready(function() {
         rand = Math.random();
         if (rand <= purple) {
             //保底外
-            $("#"+total%10).attr("srcset","img/1.gif").html();
             pic=4;
             count = 0;
             rand = Math.random();
@@ -79,7 +78,6 @@ $(document).ready(function() {
                     return origText + "非保底up外<br\>";
                 });
             }
-            return;
         }
         else if (rand <= ( blue + purple)) {
             //出三星
