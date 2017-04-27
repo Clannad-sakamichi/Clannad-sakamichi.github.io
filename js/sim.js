@@ -19,9 +19,16 @@ $(document).ready(function() {
         var rand;
         var t = 0.205;
         var y = 0.096;
+        var total;
         $("#count").html(function(i,origText){
+            total=parseInt(origText);
             return parseInt(origText)+1;
         });
+        if(total%10==0){
+            for(var i=1;i<11;i++){
+                $("#"+i).attr("srcset","").html();
+            }
+        }
         if (count == 9) {
             count = 0;
             rand = Math.random();
@@ -47,13 +54,13 @@ $(document).ready(function() {
                 });
                 //out.append("\n保底up外\n");
             }
-            $("#10").attr("src","img/4.jpg").html();
+            $("#10").attr("srcset","img/4.jpg").html();
             return;
         }
         rand = Math.random();
         if (rand <= purple) {
             //保底外
-            $("#"+count).attr("src","img/1.gif").html();
+            $("#"+total%10).attr("srcset","img/1.gif").html();
             count = 0;
             rand = Math.random();
             if (rand < t) {
@@ -84,7 +91,7 @@ $(document).ready(function() {
             $("#result").html(function(i,origText){
                 return origText + "三星 ";
             });
-            $("#"+count).attr("src","img/3.jpg").html();
+            $("#"+total%10).attr("srcset","img/3.jpg").html();
             //out.append("三星 ");
         }
         else {
@@ -93,7 +100,7 @@ $(document).ready(function() {
             $("#result").html(function(i,origText){
                 return origText + "二星 ";
             });
-            $("#"+count).attr("src","img/2.jpg").html();
+            $("#"+total%10).attr("srcset","img/2.jpg").html();
             //out.append("二星 ");
         }
     }
