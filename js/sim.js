@@ -7,6 +7,15 @@ $(document).ready(function() {
     var count = 0;
 
     $("#card").click(function(){
+       getRandom();
+    });
+
+    $("#ten").click(function () {
+        var i=0;
+        while (i++<10)getRandom();
+    });
+
+    function getRandom() {
         var rand;
         var t = 0.205;
         var y = 0.096;
@@ -38,11 +47,13 @@ $(document).ready(function() {
                 });
                 //out.append("\n保底up外\n");
             }
+            $("#10").attr("src","img/4.jpg").html();
             return;
         }
         rand = Math.random();
         if (rand <= purple) {
             //保底外
+            $("#"+count).attr("src","img/1.gif").html();
             count = 0;
             rand = Math.random();
             if (rand < t) {
@@ -73,6 +84,7 @@ $(document).ready(function() {
             $("#result").html(function(i,origText){
                 return origText + "三星 ";
             });
+            $("#"+count).attr("src","img/3.jpg").html();
             //out.append("三星 ");
         }
         else {
@@ -81,7 +93,8 @@ $(document).ready(function() {
             $("#result").html(function(i,origText){
                 return origText + "二星 ";
             });
+            $("#"+count).attr("src","img/2.jpg").html();
             //out.append("二星 ");
         }
-    });
+    }
 });
