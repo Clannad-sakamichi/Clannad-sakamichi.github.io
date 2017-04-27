@@ -21,7 +21,7 @@ $(document).ready(function() {
         var y = 0.096;
         var total;
         $("#count").html(function(i,origText){
-            total=parseInt(origText);
+            total=parseInt(origText)+1;
             return parseInt(origText)+1;
         });
         if(total%10==0){
