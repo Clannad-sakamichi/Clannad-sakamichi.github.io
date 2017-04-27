@@ -26,7 +26,7 @@ $(document).ready(function() {
             return total;
         });
         if(total%10==1&&total!=1){            //清空图片显示
-            for(var i=1;i<11;i++){
+            for(var i=0;i<10;i++){
                 $("#"+i).attr("srcset","").html();
             }
         }
