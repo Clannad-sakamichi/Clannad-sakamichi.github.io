@@ -177,6 +177,7 @@ $(document).ready(function() {
         $("#show").append(v);
         var s = document.createElement("source");
         s.src=url;
+        s.type="video/webm";
         v.appendChild(s);
     }
 });
