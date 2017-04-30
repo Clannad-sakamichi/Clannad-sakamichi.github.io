@@ -50,7 +50,7 @@ $(document).ready(function() {
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[3]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_legend/"+rand+".webm");
+                    createVideo("//op7tn4m6p.bkt.clouddn.com/img/golden/EX_legend/"+rand+".webm");
                 }else {
                     $("#result").html(function (i, origText) {
                         return origText + "<b>传说</b> ";
@@ -60,7 +60,7 @@ $(document).ready(function() {
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[3]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("http://op7tn4m6p.bkt.clouddn.com/img/common/EX_legend/"+rand+".png");
+                    createPicture("//op7tn4m6p.bkt.clouddn.com/img/common/EX_legend/"+rand+".png");
                 }
                 hasRare=true;
                 continue;
@@ -79,7 +79,7 @@ $(document).ready(function() {
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[3]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_legend/"+rand+".webm");
+                    createVideo("//op7tn4m6p.bkt.clouddn.com/img/golden/EX_legend/"+rand+".webm");
                 }else {
                     $("#result").html(function (i, origText) {
                         return origText + "<b>传说</b> ";
@@ -89,7 +89,7 @@ $(document).ready(function() {
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[3]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("http://op7tn4m6p.bkt.clouddn.com/img/common/EX_legend/"+rand+".png");
+                    createPicture("//op7tn4m6p.bkt.clouddn.com/img/common/EX_legend/"+rand+".png");
                 }
                 hasRare=true;
             }
@@ -105,7 +105,7 @@ $(document).ready(function() {
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[2]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_epic/"+rand+".webm");
+                    createVideo("//op7tn4m6p.bkt.clouddn.com/img/golden/EX_epic/"+rand+".webm");
                 } else {
                     $("#result").html(function (i, origText) {
                         return origText + "<b>史诗</b> ";
@@ -115,7 +115,7 @@ $(document).ready(function() {
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[2]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("http://op7tn4m6p.bkt.clouddn.com/img/common/EX_epic/"+rand+".png");
+                    createPicture("//op7tn4m6p.bkt.clouddn.com/img/common/EX_epic/"+rand+".png");
                 }
                 hasRare=true;
             }
@@ -128,14 +128,14 @@ $(document).ready(function() {
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_rare/"+rand+".webm");
+                    createVideo("//op7tn4m6p.bkt.clouddn.com/img/golden/EX_rare/"+rand+".webm");
                 }else {
                     $("#result").html(function (i, origText) {
                         return origText + "稀有 ";
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("http://op7tn4m6p.bkt.clouddn.com/img/common/EX_rare/"+rand+".png");
+                    createPicture("//op7tn4m6p.bkt.clouddn.com/img/common/EX_rare/"+rand+".png");
                 }
                 hasRare=true;
             }
@@ -150,14 +150,14 @@ $(document).ready(function() {
                         });
                         rand=parseInt((Math.random()*100)%100);
                         while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                        createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_rare/"+rand+".webm");
+                        createVideo("//op7tn4m6p.bkt.clouddn.com/img/golden/EX_rare/"+rand+".webm");
                     }else {
                         $("#result").html(function (i, origText) {
                             return origText + "稀有 ";
                         });
                         rand=parseInt((Math.random()*100)%100);
                         while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                        createPicture("http://op7tn4m6p.bkt.clouddn.com/img/common/EX_rare/"+rand+".png");
+                        createPicture("//op7tn4m6p.bkt.clouddn.com/img/common/EX_rare/"+rand+".png");
                     }
                     continue;
                 }
@@ -168,14 +168,14 @@ $(document).ready(function() {
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[0]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_common/"+rand+".webm");
+                    createVideo("//op7tn4m6p.bkt.clouddn.com/img/golden/EX_common/"+rand+".webm");
                 }else {
                     $("#result").html(function (i, origText) {
                         return origText + "普通 ";
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("http://op7tn4m6p.bkt.clouddn.com/img/common/EX_common/"+rand+".png");
+                    createPicture("//op7tn4m6p.bkt.clouddn.com/img/common/EX_common/"+rand+".png");
                 }
             }
         }
