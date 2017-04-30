@@ -1,7 +1,4 @@
 /**
- * Created by sakamichi on 2017/4/27.
- */
-/**
  * Created by sakamichi on 2017/4/26.
  */
 $(document).ready(function() {
@@ -61,7 +58,7 @@ $(document).ready(function() {
                 }
                 rand=parseInt((Math.random()*100)%100);
                 while(rand>ex[3]) rand=parseInt((Math.random()*100)%100);
-                createVideo("img/golden/EX_legend/"+rand+".webm");
+                createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_legend/"+rand+".webm");
                 hasRare=true;
                 continue;
             }
@@ -87,7 +84,7 @@ $(document).ready(function() {
                 }
                 rand=parseInt((Math.random()*100)%100);
                 while(rand>ex[3]) rand=parseInt((Math.random()*100)%100);
-                createVideo("img/golden/EX_legend/"+rand+".webm");
+                createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_legend/"+rand+".webm");
                 hasRare=true;
             }
             else if (rand <= ( legend + epic)) {
@@ -110,7 +107,7 @@ $(document).ready(function() {
                 }
                 rand=parseInt((Math.random()*100)%100);
                 while(rand>ex[2]) rand=parseInt((Math.random()*100)%100);
-                createVideo("img/golden/EX_epic/"+rand+".webm");
+                createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_epic/"+rand+".webm");
                 hasRare=true;
             }
             else if (rand <= ( legend + epic + rare)){
@@ -127,7 +124,7 @@ $(document).ready(function() {
                 }
                 rand=parseInt((Math.random()*100)%100);
                 while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                createVideo("img/golden/EX_rare/"+rand+".webm");
+                createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_rare/"+rand+".webm");
                 hasRare=true;
             }
             else {
@@ -146,7 +143,7 @@ $(document).ready(function() {
                     }
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("img/golden/EX_rare/"+rand+".webm");
+                    createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_rare/"+rand+".webm");
                     continue;
                 }
 
@@ -161,7 +158,7 @@ $(document).ready(function() {
                 }
                 rand=parseInt((Math.random()*100)%100);
                 while(rand>ex[0]) rand=parseInt((Math.random()*100)%100);
-                createVideo("img/golden/EX_common/"+rand+".webm");
+                createVideo("http://op7tn4m6p.bkt.clouddn.com/img/golden/EX_common/"+rand+".webm");
             }
         }
         $("#result").html(function (i, origText) {
