@@ -176,7 +176,7 @@ $(document).ready(function() {
         v.loop="loop";
         $("#show").append(v);
         var s = document.createElement("source");
-        s.src="img/7.webm";
+        s.src=url;
         s.type="video/webm";
         v.appendChild(s);
     }
