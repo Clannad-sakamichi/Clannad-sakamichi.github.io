@@ -175,7 +175,7 @@ $(document).ready(function() {
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("//op7tn4m6p.bkt.clouddn.com/img/common/EX_common/"+rand+".png");
+                    createPicture("//op7tn4m6p.bkt.clouddn.com/img/common/EX_common/"+rand+".webp");
                 }
             }
         }
