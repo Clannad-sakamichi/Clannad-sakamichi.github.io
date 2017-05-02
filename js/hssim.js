@@ -42,25 +42,27 @@ $(document).ready(function() {
                 count = 0;
                 rand = Math.random();
                 if(rand<=golden_in_legend){
-                    $("#result").html(function (i, origText) {
+                    /*$("#result").html(function (i, origText) {
                         return origText + "<b>金色传说</b> ";
-                    });
+                    });*/
                     $("#legend").html(function(i,origText){
                         return parseInt(origText)+1;
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[3]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("img/golden/EX_legend/"+rand+".webm");
+                    createVideo("img/golden/EX_legend/"+rand+".webm","#show");
+                    createVideo("img/golden/EX_legend/"+rand+".webm","#statistics");
                 }else {
-                    $("#result").html(function (i, origText) {
+                    /*$("#result").html(function (i, origText) {
                         return origText + "<b>传说</b> ";
-                    });
+                    });*/
                     $("#legend").html(function (i, origText) {
                         return parseInt(origText) + 1;
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[3]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("img/common/EX_legend/"+rand+".png");
+                    createPicture("img/common/EX_legend/"+rand+".png","#show");
+                    createPicture("img/common/EX_legend/"+rand+".png","#statistics");
                 }
                 hasRare=true;
                 continue;
@@ -71,25 +73,27 @@ $(document).ready(function() {
                 count = 0;
                 rand = Math.random();
                 if(rand<=golden_in_legend){//判断是否金色，下同
-                    $("#result").html(function (i, origText) {
+                    /*$("#result").html(function (i, origText) {
                         return origText + "<b>金色传说</b> ";
-                    });
+                    });*/
                     $("#legend").html(function(i,origText){
                         return parseInt(origText)+1;
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[3]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("img/golden/EX_legend/"+rand+".webm");
+                    createVideo("img/golden/EX_legend/"+rand+".webm","#show");
+                    createVideo("img/golden/EX_legend/"+rand+".webm","#statistics");
                 }else {
-                    $("#result").html(function (i, origText) {
+                    /*$("#result").html(function (i, origText) {
                         return origText + "<b>传说</b> ";
-                    });
+                    });*/
                     $("#legend").html(function (i, origText) {
                         return parseInt(origText) + 1;
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[3]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("img/common/EX_legend/"+rand+".png");
+                    createPicture("img/common/EX_legend/"+rand+".png","#show");
+                    createPicture("img/common/EX_legend/"+rand+".png","#statistics");
                 }
                 hasRare=true;
             }
@@ -97,25 +101,27 @@ $(document).ready(function() {
                 //史诗
                 rand = Math.random();
                 if (rand <= golden_in_epic) {
-                    $("#result").html(function (i, origText) {
+                   /* $("#result").html(function (i, origText) {
                         return origText + "<b>金色史诗</b> ";
-                    });
+                    });*/
                     $("#epic").html(function (i, origText) {
                         return parseInt(origText) + 1;
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[2]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("img/golden/EX_epic/"+rand+".webm");
+                    createVideo("img/golden/EX_epic/"+rand+".webm","#show");
+                    createVideo("img/golden/EX_epic/"+rand+".webm","#statistics");
                 } else {
-                    $("#result").html(function (i, origText) {
+                    /*$("#result").html(function (i, origText) {
                         return origText + "<b>史诗</b> ";
-                    });
+                    });*/
                     $("#epic").html(function (i, origText) {
                         return parseInt(origText) + 1;
                     });
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[2]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("img/common/EX_epic/"+rand+".png");
+                    createPicture("img/common/EX_epic/"+rand+".png","#show");
+                    createPicture("img/common/EX_epic/"+rand+".png","#statistics");
                 }
                 hasRare=true;
             }
@@ -123,19 +129,19 @@ $(document).ready(function() {
                 //稀有
                 rand = Math.random();
                 if (rand <= golden_in_rare) {
-                    $("#result").html(function (i, origText) {
+                    /*$("#result").html(function (i, origText) {
                         return origText + "金色稀有 ";
-                    });
+                    });*/
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("img/golden/EX_rare/"+rand+".webm");
+                    createVideo("img/golden/EX_rare/"+rand+".webm","#show");
                 }else {
-                    $("#result").html(function (i, origText) {
+                    /*$("#result").html(function (i, origText) {
                         return origText + "稀有 ";
-                    });
+                    });*/
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("img/common/EX_rare/"+rand+".png");
+                    createPicture("img/common/EX_rare/"+rand+".png","#show");
                 }
                 hasRare=true;
             }
@@ -145,37 +151,37 @@ $(document).ready(function() {
                 if(pack==5&&!hasRare){//触发一包保底
                     //强制稀有
                     if (rand <= golden_in_rare) {
-                        $("#result").html(function (i, origText) {
+                       /* $("#result").html(function (i, origText) {
                             return origText + "金色稀有 ";
-                        });
+                        });*/
                         rand=parseInt((Math.random()*100)%100);
                         while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                        createVideo("img/golden/EX_rare/"+rand+".webm");
+                        createVideo("img/golden/EX_rare/"+rand+".webm","#show");
                     }else {
-                        $("#result").html(function (i, origText) {
+                       /* $("#result").html(function (i, origText) {
                             return origText + "稀有 ";
-                        });
+                        });*/
                         rand=parseInt((Math.random()*100)%100);
                         while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                        createPicture("img/common/EX_rare/"+rand+".png");
+                        createPicture("img/common/EX_rare/"+rand+".png","#show");
                     }
                     continue;
                 }
 
                 if (rand <= golden_in_common) {
-                    $("#result").html(function (i, origText) {
+                    /*$("#result").html(function (i, origText) {
                         return origText + "金色普通 ";
-                    });
+                    });*/
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[0]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("img/golden/EX_common/"+rand+".webm");
+                    createVideo("img/golden/EX_common/"+rand+".webm","#show");
                 }else {
-                    $("#result").html(function (i, origText) {
+                    /*$("#result").html(function (i, origText) {
                         return origText + "普通 ";
-                    });
+                    });*/
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>ex[1]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("img/common/EX_common/"+rand+".png");
+                    createPicture("img/common/EX_common/"+rand+".png","#show");
                 }
             }
         }
@@ -184,22 +190,22 @@ $(document).ready(function() {
         });
     }
 
-    function createVideo(url)
+    function createVideo(url,id)
     {
         var v = document.createElement("video");
         v.autoplay="autoplay";
         v.loop="loop";
-        $("#show").append(v);
+        $(id).append(v);
         var s = document.createElement("source");
         s.src=url;
         s.type="video/webm";
         v.appendChild(s);
     }
 
-    function createPicture(url)
+    function createPicture(url,id)
     {
         var v = document.createElement("picture");
-        $("#show").append(v);
+        $(id).append(v);
         var s = document.createElement("img");
         s.srcset=url;
         v.appendChild(s);
