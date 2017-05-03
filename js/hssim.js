@@ -39,35 +39,35 @@ $(document).ready(function() {
     UNG[3]=22;
 
     var pack_check = "EX";
+    var arr=EX;
 
     $("#duel").click(function(){
-        var pack = document.getElementsByName("pack");
-        for(var i=0; i<pack.length; i ++){
-            if(pack[i].checked){
-                if(pack[i].value!=pack_check){
-                    alert("更换卡包会导致累计显示清空");
-                    clear();
-                    pack_check=pack[i].value;
-                }
-                 switch(pack[i].value){
-                     case "EX":
-                         getRandom(EX);//开一包
-                         break;
-                     case "OG":
-                         getRandom(OG);//开一包
-                         break;
-                     case "CFM":
-                         getRandom(CFM);//开一包
-                         break;
-                     case "UNG":
-                         getRandom(UNG);//开一包
-                         break;
-                     default:
-                         alert("error");
-                         break;
-                 }
-            }
-        }
+        getRandom(arr);//开一包
+    });
+
+    $("#CFM").click(function(){
+        alert("更换卡包会导致累计显示清空");
+        clear();
+        pack_check="CFM";
+        arr=CFM;
+    });
+    $("#OG").click(function(){
+        alert("更换卡包会导致累计显示清空");
+        clear();
+        pack_check="OG";
+        arr=OG;
+    });
+    $("#UNG").click(function(){
+        alert("更换卡包会导致累计显示清空");
+        clear();
+        pack_check="UNG";
+        arr=UNG;
+    });
+    $("#EX").click(function(){
+        alert("更换卡包会导致累计显示清空");
+        clear();
+        pack_check="EX";
+        arr=EX;
     });
 
 
@@ -241,6 +241,7 @@ $(document).ready(function() {
         var v = document.createElement("video");
         v.autoplay="autoplay";
         v.loop="loop";
+        v.className="card";
         $(id).append(v);
         var s = document.createElement("source");
         s.src=url;
@@ -250,11 +251,10 @@ $(document).ready(function() {
 
     function createPicture(url,id)
     {
-        var v = document.createElement("picture");
-        $(id).append(v);
         var s = document.createElement("img");
         s.srcset=url;
-        v.appendChild(s);
+        s.className="card";
+        $(id).append(s);
     }
 
     function clear() {
