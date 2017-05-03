@@ -242,6 +242,12 @@ $(document).ready(function() {
         v.autoplay="autoplay";
         v.loop="loop";
         v.className="card";
+        v.onmouseover=function (){
+            this.style.width="190px";
+        };
+        v.onmouseout=function (){
+            this.style.width="120px";
+        };
         $(id).append(v);
         var s = document.createElement("source");
         s.src=url;
@@ -254,6 +260,12 @@ $(document).ready(function() {
         var s = document.createElement("img");
         s.srcset=url;
         s.className="card";
+        s.onmouseover=function (){
+            this.style.width="190px";
+        };
+        s.onmouseout=function (){
+            this.style.width="120px";
+        };
         $(id).append(s);
     }
 
