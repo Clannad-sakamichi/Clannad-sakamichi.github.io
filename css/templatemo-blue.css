@@ -49,9 +49,11 @@ h2 {
 }
 
 .tm-title {
-	color: #66CCFF;
+	color: #F5DEB3;
 }
-
+.brown{
+  color: #8B4513;
+}
 .white {
   color: #fff;
 }
@@ -63,7 +65,10 @@ h2 {
   min-height: 330px;
 }
 .about{
-  padding: 25px;
+  padding-top: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 40px;
   min-height: 330px;
 
 }
@@ -73,12 +78,21 @@ h2 {
   height: 100%;
 
 }
-.block1{
-  padding: 10px;
-  width: 50%;
-  height: 30%;
-}
+td{
+  align:center;}
 
+.block1{
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 50%;
+  height: 40%;
+}
+.block2{
+ margin: 0 auto;
+margin-top: 25px;
+ height: 30%;
+ width: 100%;
+}
 
 .education, .languages,
 .contact, .experience {
@@ -176,14 +190,28 @@ header hr {
 
 /* about section */
 .about {
-  background: #fff;
+  background: rgba(0,102,255,0);
+  color: #00F;
+  background: url(../img/bg-box2.png) no-repeat;
+  background-size: 100% 100%;
+  margin-right: auto;
+  margin-left: auto;
+  vertical-align: top;
+  max-width: 800px;
   box-shadow: 0px 1px 5px rgba(50,50,50,0.08);
 }
 
 /* skills section */
 .skills {
-  background: #3366CC;
-  color: #f5f5f5;
+  background: rgba(0,102,255,0);
+  color: #00F;
+  border-radius: 5%;
+  background: url(../img/bg-box2.png) no-repeat;
+  background-size: 100% 100%;
+  margin-right: auto;
+  margin-left: auto;
+  vertical-align: top;
+  max-width: 800px;
 }
 .skills .progress {
   border-radius: 0px;
@@ -200,8 +228,14 @@ header hr {
 
 /* education section */
 .education {
-  background: #3366CC;
-  color: #f5f5f5;
+  background: rgba(0,102,255,0);
+  color: #00F;
+  background: url(../img/bg-box2.png) no-repeat;
+  background-size: 100% 100%;
+  margin-right: auto;
+  margin-left: auto;
+  vertical-align: top;
+  max-width: 800px;
 }
 .education .education-content {
   padding-bottom: 14px;
@@ -216,7 +250,14 @@ header hr {
 
 /* languages section */
 .languages {
-  background: #fff;
+  background: rgba(0,102,255,0);
+  color: #8B4513;
+  background: url(../img/bg-box2.png) no-repeat;
+  background-size: 100% 100%;
+  margin-right: auto;
+  margin-left: auto;
+  vertical-align: top;
+  max-width: 800px;
  box-shadow: 0px 1px 5px rgba(50,50,50,0.08);
 }
 .languages ul {
@@ -269,7 +310,7 @@ footer {
   list-style: none;
 }
 .social-icons li a {
-  background: #3366CC;
+  background: #CD853F;
   border-radius: 50%;
   color: #fff;
   text-decoration: none;
@@ -306,7 +347,6 @@ footer {
     font-size: 20px;
   }
 }
-
 .card{
     width : 120px;
     margin-top: 0px;
