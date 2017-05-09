@@ -45,9 +45,7 @@ $(document).ready(function() {
     var arr=EX;
 
     $("#duel").click(function(){
-        var c=0;
-        while(c++<30)
-            getRandom(arr);//开一包
+        getRandom(arr);//开一包
     });
 
     $("#CFM").click(function(){
