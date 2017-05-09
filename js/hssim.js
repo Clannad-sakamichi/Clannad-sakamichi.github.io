@@ -219,12 +219,13 @@ $(document).ready(function() {
     function createVideo(url,id)
     {
         var t = document.createElement("td");
-        t.className="block1";
+        t.className="block3";
         $(id).append(t);
         var v = document.createElement("video");
         v.autoplay="autoplay";
         v.loop="loop";
-        v.className="card";/*
+        v.className="img-responsive";
+        /*
         v.style.width=parseFloat($(window).width())/11+"px";
         v.onmouseover=function (){
             this.style.width=parseFloat($(window).width())/8+"px";
@@ -243,10 +244,10 @@ $(document).ready(function() {
     function createPicture(url,id)
     {
         var t = document.createElement("td");
-        t.className="block1";
+        t.className="block3";
         var s = document.createElement("img");
         s.srcset=url;
-        s.className="card";
+        s.className="img-responsive";
         /*
         s.style.width=parseFloat($(window).width())/11+"px";
         s.onmouseover=function (){
@@ -266,10 +267,10 @@ $(document).ready(function() {
         }
         tdCount++;
         var t = document.createElement("td");
-        t.className="block1";
+        t.className="block3";
         var s = document.createElement("img");
         s.srcset=url;
-        s.className="card";
+        s.className="img-responsive";
         t.appendChild(s);
         $("#statistics").append(t);
     }
@@ -280,12 +281,12 @@ $(document).ready(function() {
         }
         tdCount++;
         var t = document.createElement("td");
-        t.className="block1";
+        t.className="block3";
         $(id).append(t);
         var v = document.createElement("video");
         v.autoplay="autoplay";
         v.loop="loop";
-        v.className="card";
+        v.className="img-responsive";
         var s = document.createElement("source");
         s.src=url;
         s.type="video/webm";
