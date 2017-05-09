@@ -46,7 +46,7 @@ $(document).ready(function() {
     var arr=EX;
 
     $("#duel").click(function(){
-        getRandom(arr);//开一包
+        getRandom();//开一包
     });
 
     $("#CFM").click(function(){
@@ -76,9 +76,8 @@ $(document).ready(function() {
 
 
 
-    function getRandom(arr) {
+    function getRandom() {
         var rand;//随机量
-        var total;                  //累计次数
         var pack=0;
         var hasRare = false;
         count++;
@@ -89,8 +88,7 @@ $(document).ready(function() {
         });
         while(pack++<5) {
             rand = Math.random();
-            var pro = getPro(count/4);
-            if (rand <= pro) {
+            if (rand <= getPro(count/4)) {
                 //传说
                 count = 0;
                 rand = Math.random();
@@ -102,7 +100,7 @@ $(document).ready(function() {
                     setDust(1600);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[3]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("img/golden/"+pack_check+"_legend/"+rand+".webm","#show");
+                    createVideo("img/golden/"+pack_check+"_legend/"+rand+".webm");
                     createVidSta("img/golden/"+pack_check+"_legend/"+rand+".webm");
                 }else {
                     //传说
@@ -112,7 +110,7 @@ $(document).ready(function() {
                     setDust(400);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[3]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("img/common/"+pack_check+"_legend/"+rand+".png","#show");
+                    createPicture("img/common/"+pack_check+"_legend/"+rand+".png");
                     createPicSta("img/common/"+pack_check+"_legend/"+rand+".png");
                 }
                 hasRare=true;
@@ -128,7 +126,7 @@ $(document).ready(function() {
                     setDust(400);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[2]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("img/golden/"+pack_check+"_epic/"+rand+".webm","#show");
+                    createVideo("img/golden/"+pack_check+"_epic/"+rand+".webm");
                     createVidSta("img/golden/"+pack_check+"_epic/"+rand+".webm");
                 } else {
                     //史诗
@@ -138,7 +136,7 @@ $(document).ready(function() {
                     setDust(100);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[2]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("img/common/"+pack_check+"_epic/"+rand+".png","#show");
+                    createPicture("img/common/"+pack_check+"_epic/"+rand+".png");
                     createPicSta("img/common/"+pack_check+"_epic/"+rand+".png");
                 }
                 hasRare=true;
@@ -151,13 +149,13 @@ $(document).ready(function() {
                     setDust(100);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("img/golden/"+pack_check+"_rare/"+rand+".webm","#show");
+                    createVideo("img/golden/"+pack_check+"_rare/"+rand+".webm");
                 }else {
                     //稀有
                     setDust(20);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("img/common/"+pack_check+"_rare/"+rand+".png","#show");
+                    createPicture("img/common/"+pack_check+"_rare/"+rand+".png");
                 }
                 hasRare=true;
             }
@@ -171,13 +169,13 @@ $(document).ready(function() {
                         setDust(100);
                         rand=parseInt((Math.random()*100)%100);
                         while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
-                        createVideo("img/golden/"+pack_check+"_rare/"+rand+".webm","#show");
+                        createVideo("img/golden/"+pack_check+"_rare/"+rand+".webm");
                     }else {
                         //稀有
                         setDust(20);
                         rand=parseInt((Math.random()*100)%100);
                         while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
-                        createPicture("img/common/"+pack_check+"_rare/"+rand+".png","#show");
+                        createPicture("img/common/"+pack_check+"_rare/"+rand+".png");
                     }
                     continue;
                 }
@@ -187,13 +185,13 @@ $(document).ready(function() {
                     setDust(50);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[0]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("img/golden/"+pack_check+"_common/"+rand+".webm","#show");
+                    createVideo("img/golden/"+pack_check+"_common/"+rand+".webm");
                 }else {
                     //普通
                     setDust(5);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("img/common/"+pack_check+"_common/"+rand+".png","#show");
+                    createPicture("img/common/"+pack_check+"_common/"+rand+".png");
                 }
             }
         }
@@ -226,11 +224,11 @@ $(document).ready(function() {
         }
     }
 
-    function createVideo(url,id)
+    function createVideo(url)
     {
         var t = document.createElement("td");
         t.className="block3";
-        $(id).append(t);
+        $("#show").append(t);
         var v = document.createElement("video");
         v.autoplay="autoplay";
         v.loop="loop";
@@ -246,17 +244,19 @@ $(document).ready(function() {
         //$(id).append(v);
         var s = document.createElement("source");
         s.src=url;
+        s.alt="加载失败";
         s.type="video/webm";
         v.appendChild(s);
         t.appendChild(v);
     }
 
-    function createPicture(url,id)
+    function createPicture(url)
     {
         var t = document.createElement("td");
         t.className="block3";
         var s = document.createElement("img");
         s.srcset=url;
+        s.alt="加载失败";
         s.className="img-responsive";
         /*
         s.style.width=parseFloat($(window).width())/11+"px";
@@ -268,7 +268,7 @@ $(document).ready(function() {
         };*/
         //$(id).append(s);
         t.appendChild(s);
-        $(id).append(t);
+        $("#show").append(t);
     }
 
     function createPicSta(url) {
@@ -280,6 +280,7 @@ $(document).ready(function() {
         t.className="block3";
         var s = document.createElement("img");
         s.srcset=url;
+        s.alt="加载失败";
         s.className="img-responsive";
         t.appendChild(s);
         $("#statistics").append(t);
@@ -292,13 +293,14 @@ $(document).ready(function() {
         tdCount++;
         var t = document.createElement("td");
         t.className="block3";
-        $(id).append(t);
+        $("#statistics").append(t);
         var v = document.createElement("video");
         v.autoplay="autoplay";
         v.loop="loop";
         v.className="img-responsive";
         var s = document.createElement("source");
         s.src=url;
+        s.alt="加载失败";
         s.type="video/webm";
         v.appendChild(s);
         t.appendChild(v);
@@ -312,6 +314,7 @@ $(document).ready(function() {
 
     function clear() {
         count=0;
+        tdCount=0;
         $("#show").empty();         //清空显示
         $("#statistics").empty();
 
