@@ -221,11 +221,12 @@ $(document).ready(function() {
         v.autoplay="autoplay";
         v.loop="loop";
         v.className="card";
+        v.style.width=parseFloat($(window).width())/11+"px";
         v.onmouseover=function (){
-            this.style.width="190px";
+            this.style.width=parseFloat($(window).width())/8+"px";
         };
         v.onmouseout=function (){
-            this.style.width="120px";
+            this.style.width=parseFloat($(window).width())/11+"px";
         };
         $(id).append(v);
         var s = document.createElement("source");
@@ -239,11 +240,12 @@ $(document).ready(function() {
         var s = document.createElement("img");
         s.srcset=url;
         s.className="card";
+        s.style.width=parseFloat($(window).width())/11+"px";
         s.onmouseover=function (){
-            this.style.width="190px";
+            this.style.width=parseFloat($(window).width())/8+"px";
         };
         s.onmouseout=function (){
-            this.style.width="120px";
+            this.style.width=parseFloat($(window).width())/11+"px";
         };
         $(id).append(s);
     }
