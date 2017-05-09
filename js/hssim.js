@@ -321,6 +321,7 @@ $(document).ready(function() {
         $("#count").html("0");
         $("#legend").html("0");
         $("#epic").html("0");
-
+        $("#dust").html("0");
+        
     }
 });
