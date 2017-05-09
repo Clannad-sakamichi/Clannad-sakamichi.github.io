@@ -3,9 +3,12 @@
  */
 $(document).ready(function() {
     //概率
+    /*
     var legend = 0.0101;
     var epic = 0.0427;
-    var rare = 0.2287;
+    var rare = 0.2287;*/
+    var over_epic = 0.05;
+    var over_rare = 0.225;
 
     var golden_in_legend = 0.0731;
     var golden_in_epic = 0.0452;
@@ -42,7 +45,9 @@ $(document).ready(function() {
     var arr=EX;
 
     $("#duel").click(function(){
-        getRandom(arr);//开一包
+        var c=0;
+        while(c++<30)
+            getRandom(arr);//开一包
     });
 
     $("#CFM").click(function(){
@@ -84,44 +89,14 @@ $(document).ready(function() {
             return parseInt(origText)+1;
         });
         while(pack++<5) {
-            if (count == 40) {           //触发保底
-                count = 0;
-                rand = Math.random();
-                if(rand<=golden_in_legend){
-                    /*$("#result").html(function (i, origText) {
-                        return origText + "<b>金色传说</b> ";
-                    });*/
-                    $("#legend").html(function(i,origText){
-                        return parseInt(origText)+1;
-                    });
-                    rand=parseInt((Math.random()*100)%100);
-                    while(rand>arr[3]) rand=parseInt((Math.random()*100)%100);
-                    createVideo("img/golden/"+pack_check+"_legend/"+rand+".webm","#show");
-                    createVideo("img/golden/"+pack_check+"_legend/"+rand+".webm","#statistics");
-                }else {
-                    /*$("#result").html(function (i, origText) {
-                        return origText + "<b>传说</b> ";
-                    });*/
-                    $("#legend").html(function (i, origText) {
-                        return parseInt(origText) + 1;
-                    });
-                    rand=parseInt((Math.random()*100)%100);
-                    while(rand>arr[3]) rand=parseInt((Math.random()*100)%100);
-                    createPicture("img/common/"+pack_check+"_legend/"+rand+".png","#show");
-                    createPicture("img/common/"+pack_check+"_legend/"+rand+".png","#statistics");
-                }
-                hasRare=true;
-                continue;
-            }
             rand = Math.random();
-            if (rand <= legend) {
+            var pro = getPro(count/4);
+            if (rand <= pro) {
                 //传说
                 count = 0;
                 rand = Math.random();
                 if(rand<=golden_in_legend){//判断是否金色，下同
-                    /*$("#result").html(function (i, origText) {
-                        return origText + "<b>金色传说</b> ";
-                    });*/
+                    //金色传说
                     $("#legend").html(function(i,origText){
                         return parseInt(origText)+1;
                     });
@@ -130,9 +105,7 @@ $(document).ready(function() {
                     createVideo("img/golden/"+pack_check+"_legend/"+rand+".webm","#show");
                     createVideo("img/golden/"+pack_check+"_legend/"+rand+".webm","#statistics");
                 }else {
-                    /*$("#result").html(function (i, origText) {
-                        return origText + "<b>传说</b> ";
-                    });*/
+                    //传说
                     $("#legend").html(function (i, origText) {
                         return parseInt(origText) + 1;
                     });
@@ -143,13 +116,11 @@ $(document).ready(function() {
                 }
                 hasRare=true;
             }
-            else if (rand <= ( legend + epic)) {
+            else if (rand <= over_epic) {
                 //史诗
                 rand = Math.random();
                 if (rand <= golden_in_epic) {
-                   /* $("#result").html(function (i, origText) {
-                        return origText + "<b>金色史诗</b> ";
-                    });*/
+                    //金色史诗
                     $("#epic").html(function (i, origText) {
                         return parseInt(origText) + 1;
                     });
@@ -158,9 +129,7 @@ $(document).ready(function() {
                     createVideo("img/golden/"+pack_check+"_epic/"+rand+".webm","#show");
                     createVideo("img/golden/"+pack_check+"_epic/"+rand+".webm","#statistics");
                 } else {
-                    /*$("#result").html(function (i, origText) {
-                        return origText + "<b>史诗</b> ";
-                    });*/
+                    //史诗
                     $("#epic").html(function (i, origText) {
                         return parseInt(origText) + 1;
                     });
@@ -171,20 +140,16 @@ $(document).ready(function() {
                 }
                 hasRare=true;
             }
-            else if (rand <= ( legend + epic + rare)){
+            else if (rand <= over_rare){
                 //稀有
                 rand = Math.random();
                 if (rand <= golden_in_rare) {
-                    /*$("#result").html(function (i, origText) {
-                        return origText + "金色稀有 ";
-                    });*/
+                    //金色稀有
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
                     createVideo("img/golden/"+pack_check+"_rare/"+rand+".webm","#show");
                 }else {
-                    /*$("#result").html(function (i, origText) {
-                        return origText + "稀有 ";
-                    });*/
+                    //稀有
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
                     createPicture("img/common/"+pack_check+"_rare/"+rand+".png","#show");
@@ -197,16 +162,12 @@ $(document).ready(function() {
                 if(pack==5&&!hasRare){//触发一包保底
                     //强制稀有
                     if (rand <= golden_in_rare) {
-                       /* $("#result").html(function (i, origText) {
-                            return origText + "金色稀有 ";
-                        });*/
+                        //金色稀有
                         rand=parseInt((Math.random()*100)%100);
                         while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
                         createVideo("img/golden/"+pack_check+"_rare/"+rand+".webm","#show");
                     }else {
-                       /* $("#result").html(function (i, origText) {
-                            return origText + "稀有 ";
-                        });*/
+                        //稀有
                         rand=parseInt((Math.random()*100)%100);
                         while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
                         createPicture("img/common/"+pack_check+"_rare/"+rand+".png","#show");
@@ -215,25 +176,45 @@ $(document).ready(function() {
                 }
 
                 if (rand <= golden_in_common) {
-                    /*$("#result").html(function (i, origText) {
-                        return origText + "金色普通 ";
-                    });*/
+                    //金色普通
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[0]) rand=parseInt((Math.random()*100)%100);
                     createVideo("img/golden/"+pack_check+"_common/"+rand+".webm","#show");
                 }else {
-                    /*$("#result").html(function (i, origText) {
-                        return origText + "普通 ";
-                    });*/
+                    //普通
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
                     createPicture("img/common/"+pack_check+"_common/"+rand+".png","#show");
                 }
             }
         }
-        /*$("#result").html(function (i, origText) {
-            return origText + "<br\>";//换行
-        });*/
+    }
+
+    function getPro(count){
+        switch (parseInt(count)){
+            case 0://0
+                return 0.0065;
+            case 1://4
+                return 0.007;
+            case 2://8
+                return 0.0075;
+            case 3://12
+                return 0.008;
+            case 4://16
+                return 0.0085;
+            case 5://20
+                return 0.009;
+            case 6://24
+                return 0.0095;
+            case 7://28
+                return 0.01;
+            case 8://32
+                return 0.02;
+            case 9://36
+                return 0.08;
+            default:
+                return 1;
+        }
     }
 
     function createVideo(url,id)
