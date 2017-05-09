@@ -99,6 +99,7 @@ $(document).ready(function() {
                     $("#legend").html(function(i,origText){
                         return parseInt(origText)+1;
                     });
+                    setDust(1600);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[3]) rand=parseInt((Math.random()*100)%100);
                     createVideo("img/golden/"+pack_check+"_legend/"+rand+".webm","#show");
@@ -108,6 +109,7 @@ $(document).ready(function() {
                     $("#legend").html(function (i, origText) {
                         return parseInt(origText) + 1;
                     });
+                    setDust(400);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[3]) rand=parseInt((Math.random()*100)%100);
                     createPicture("img/common/"+pack_check+"_legend/"+rand+".png","#show");
@@ -123,6 +125,7 @@ $(document).ready(function() {
                     $("#epic").html(function (i, origText) {
                         return parseInt(origText) + 1;
                     });
+                    setDust(400);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[2]) rand=parseInt((Math.random()*100)%100);
                     createVideo("img/golden/"+pack_check+"_epic/"+rand+".webm","#show");
@@ -132,6 +135,7 @@ $(document).ready(function() {
                     $("#epic").html(function (i, origText) {
                         return parseInt(origText) + 1;
                     });
+                    setDust(100);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[2]) rand=parseInt((Math.random()*100)%100);
                     createPicture("img/common/"+pack_check+"_epic/"+rand+".png","#show");
@@ -144,11 +148,13 @@ $(document).ready(function() {
                 rand = Math.random();
                 if (rand <= golden_in_rare) {
                     //金色稀有
+                    setDust(100);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
                     createVideo("img/golden/"+pack_check+"_rare/"+rand+".webm","#show");
                 }else {
                     //稀有
+                    setDust(20);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
                     createPicture("img/common/"+pack_check+"_rare/"+rand+".png","#show");
@@ -162,11 +168,13 @@ $(document).ready(function() {
                     //强制稀有
                     if (rand <= golden_in_rare) {
                         //金色稀有
+                        setDust(100);
                         rand=parseInt((Math.random()*100)%100);
                         while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
                         createVideo("img/golden/"+pack_check+"_rare/"+rand+".webm","#show");
                     }else {
                         //稀有
+                        setDust(20);
                         rand=parseInt((Math.random()*100)%100);
                         while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
                         createPicture("img/common/"+pack_check+"_rare/"+rand+".png","#show");
@@ -176,11 +184,13 @@ $(document).ready(function() {
 
                 if (rand <= golden_in_common) {
                     //金色普通
+                    setDust(50);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[0]) rand=parseInt((Math.random()*100)%100);
                     createVideo("img/golden/"+pack_check+"_common/"+rand+".webm","#show");
                 }else {
                     //普通
+                    setDust(5);
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[1]) rand=parseInt((Math.random()*100)%100);
                     createPicture("img/common/"+pack_check+"_common/"+rand+".png","#show");
@@ -292,6 +302,12 @@ $(document).ready(function() {
         s.type="video/webm";
         v.appendChild(s);
         t.appendChild(v);
+    }
+
+    function setDust(dust) {
+        $("#dust").html(function (i, origText) {
+            return parseInt(origText) + dust;
+        });
     }
 
     function clear() {
