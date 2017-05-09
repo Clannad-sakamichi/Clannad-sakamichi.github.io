@@ -16,6 +16,7 @@ $(document).ready(function() {
     var golden_in_common = 0.0206;
 
     var count = 0;//计算保底
+    var tdCount = 0;//计算是否需要换行
 
     var EX = new Array();
     EX[0]=93;
@@ -101,7 +102,7 @@ $(document).ready(function() {
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[3]) rand=parseInt((Math.random()*100)%100);
                     createVideo("img/golden/"+pack_check+"_legend/"+rand+".webm","#show");
-                    createVideo("img/golden/"+pack_check+"_legend/"+rand+".webm","#statistics");
+                    createVidSta("img/golden/"+pack_check+"_legend/"+rand+".webm");
                 }else {
                     //传说
                     $("#legend").html(function (i, origText) {
@@ -110,7 +111,7 @@ $(document).ready(function() {
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[3]) rand=parseInt((Math.random()*100)%100);
                     createPicture("img/common/"+pack_check+"_legend/"+rand+".png","#show");
-                    createPicture("img/common/"+pack_check+"_legend/"+rand+".png","#statistics");
+                    createPicSta("img/common/"+pack_check+"_legend/"+rand+".png");
                 }
                 hasRare=true;
             }
@@ -125,7 +126,7 @@ $(document).ready(function() {
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[2]) rand=parseInt((Math.random()*100)%100);
                     createVideo("img/golden/"+pack_check+"_epic/"+rand+".webm","#show");
-                    createVideo("img/golden/"+pack_check+"_epic/"+rand+".webm","#statistics");
+                    createVidSta("img/golden/"+pack_check+"_epic/"+rand+".webm");
                 } else {
                     //史诗
                     $("#epic").html(function (i, origText) {
@@ -134,7 +135,7 @@ $(document).ready(function() {
                     rand=parseInt((Math.random()*100)%100);
                     while(rand>arr[2]) rand=parseInt((Math.random()*100)%100);
                     createPicture("img/common/"+pack_check+"_epic/"+rand+".png","#show");
-                    createPicture("img/common/"+pack_check+"_epic/"+rand+".png","#statistics");
+                    createPicSta("img/common/"+pack_check+"_epic/"+rand+".png");
                 }
                 hasRare=true;
             }
@@ -217,37 +218,79 @@ $(document).ready(function() {
 
     function createVideo(url,id)
     {
+        var t = document.createElement("td");
+        t.className="block1";
+        $(id).append(t);
         var v = document.createElement("video");
         v.autoplay="autoplay";
         v.loop="loop";
-        v.className="card";
+        v.className="card";/*
         v.style.width=parseFloat($(window).width())/11+"px";
         v.onmouseover=function (){
             this.style.width=parseFloat($(window).width())/8+"px";
         };
         v.onmouseout=function (){
             this.style.width=parseFloat($(window).width())/11+"px";
-        };
-        $(id).append(v);
+        };*/
+        //$(id).append(v);
         var s = document.createElement("source");
         s.src=url;
         s.type="video/webm";
         v.appendChild(s);
+        t.appendChild(v);
     }
 
     function createPicture(url,id)
     {
+        var t = document.createElement("td");
+        t.className="block1";
         var s = document.createElement("img");
         s.srcset=url;
         s.className="card";
+        /*
         s.style.width=parseFloat($(window).width())/11+"px";
         s.onmouseover=function (){
             this.style.width=parseFloat($(window).width())/8+"px";
         };
         s.onmouseout=function (){
-            this.style.width=parseFloat($(window).width())/11+"px";
-        };
-        $(id).append(s);
+            this.style.width="120px";
+        };*/
+        //$(id).append(s);
+        t.appendChild(s);
+        $(id).append(t);
+    }
+
+    function createPicSta(url) {
+        if(tdCount%5==0){
+            $("#statistics").append(document.createElement("tr"));
+        }
+        tdCount++;
+        var t = document.createElement("td");
+        t.className="block1";
+        var s = document.createElement("img");
+        s.srcset=url;
+        s.className="card";
+        t.appendChild(s);
+        $("#statistics").append(t);
+    }
+
+    function createVidSta(url) {
+        if(tdCount%5==0){
+            $("#statistics").append(document.createElement("tr"));
+        }
+        tdCount++;
+        var t = document.createElement("td");
+        t.className="block1";
+        $(id).append(t);
+        var v = document.createElement("video");
+        v.autoplay="autoplay";
+        v.loop="loop";
+        v.className="card";
+        var s = document.createElement("source");
+        s.src=url;
+        s.type="video/webm";
+        v.appendChild(s);
+        t.appendChild(v);
     }
 
     function clear() {
